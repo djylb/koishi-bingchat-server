@@ -1,7 +1,6 @@
 FROM phusion/baseimage:jammy-1.0.1
 MAINTAINER D-Jy <duan@d-jy.net>
 
-EXPOSE 8006
 EXPOSE 8007
 
 # Use baseimage-docker's init system.
@@ -34,8 +33,6 @@ RUN python3 -m venv venv && \
 	chown -R www-data:www-data /srv/openchat
 
 # Register services to runit
-RUN mkdir /etc/service/openchat
-COPY conf/runit/openchat.sh /etc/service/openchat/run
 RUN mkdir /etc/service/bing
 COPY conf/runit/bing.sh /etc/service/bing/run
 
