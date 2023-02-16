@@ -1,0 +1,4 @@
+revChatGPT
+EdgeGPT
+fastapi
+uvicorn
