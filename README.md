@@ -92,7 +92,7 @@ docker run -d --name=openchat --restart=always -p <你想要开放的端口>:800
 
 # 手动搭建
 ## 待续
-参考Dockerfile文件，并按需要修改chat.py文件。
+参考Dockerfile文件，并按需要修改bing.py文件。
 
 
 ## Links
