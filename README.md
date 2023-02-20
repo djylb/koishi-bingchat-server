@@ -59,7 +59,7 @@ cd koishi-bingchat-server
 nano cookie.json
 
 # 运行容器
-docker run -d --name=bingchat --restart=always -v <你存放文件的路径>/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
+docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
 ```
 
 ```shell
