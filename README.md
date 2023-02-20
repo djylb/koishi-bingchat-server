@@ -74,7 +74,7 @@ docker rm bingchat
 docker run -d --name=bingchat --restart=always -v <你存放文件的路径>/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
 ```
 
-## 注：如果我长时间没更新镜像请使用下方方式安装
+## 注：如果我长时间没更新镜像请使用以下方式安装
 
 # **手动打包docker安装**
 ```shell
