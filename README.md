@@ -12,14 +12,12 @@
 
 - 搭建一个可以运行的koshi服务器
 - 拥有一个微软账号，获取bing网页cookie。[cookie-editor](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm/)
-- 拥有一台服务器并拥有python环境（如果不需要在服务器在搭建可以不需要）
-
+- 拥有一台服务器并拥有python环境（如果不手动搭建可以不需要）
 
 ### 获取Cookie
 
 - Microsoft Edge (Required)
 - 一个能够访问 http://bing.com/chat 的微软账户 (Required)
-
 
 <details>
   <summary>
@@ -33,7 +31,6 @@
 - 如果看到聊天界面说明账户可用
 
 </details>
-
 
 <details>
   <summary>
@@ -50,9 +47,36 @@
 
 </details>
 
-
 # **docker 搭建 server （推荐）By D-Jy**
+```shell
+# 新建一个目录
+mkdir koishi-bingchat-server
 
+# 进入目录
+cd koishi-bingchat-server
+
+# 创建cookie.json文件，填入bing网页cookie。
+nano cookie.json
+
+# 运行容器
+docker run -d --name=bingchat --restart=always -v <你存放文件的路径>/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
+```
+
+```shell
+# 拉取容器更新
+docker pull duan2001/bingchat
+
+# 删除现有容器
+docker stop bingchat
+docker rm bingchat
+
+# 运行更新后的容器
+docker run -d --name=bingchat --restart=always -v <你存放文件的路径>/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
+```
+
+## 注：如果我长时间没更新镜像请使用下方方式安装
+
+# **手动打包docker安装**
 ```shell
 # 下载项目源码
 git clone https://github.com/D-Jy-lab/koishi-bingchat-server.git
@@ -89,9 +113,7 @@ docker rm bingchat
 
 # 运行更新后的容器
 docker run -d --name=openchat --restart=always -p <你想要开放的端口>:8006 duan2001/bingchat
-
 ```
-
 
 # 手动搭建
 ## 待续
