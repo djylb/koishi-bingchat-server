@@ -16,7 +16,7 @@ def ping():
     return {"message": "pong"}
 
 
-@app.post("/chat")
+@app.post("/bing")
 async def chatGPT(body: dict = Body(...)):
     global flag
     prompt = body["prompt"]
@@ -30,6 +30,7 @@ async def chatGPT(body: dict = Body(...)):
         if prompt == "!reset":
             await chatbot.reset()
             print("OK")
+            flag = False
             return {"message": "OK"}
         answer = (await chatbot.ask(prompt))["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"]
         print("Bingbot: " + answer)
