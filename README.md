@@ -15,7 +15,8 @@
 - 拥有一台服务器并拥有python环境（如果不需要在服务器在搭建可以不需要）
 
 
- 要求
+### 获取Cookie
+
 - Microsoft Edge (Required)
 - 一个能够访问 http://bing.com/chat 的微软账户 (Required)
 
@@ -23,7 +24,7 @@
 <details>
   <summary>
 
-  ### 检查账户访问权限 (Required)
+  #### 检查账户访问权限 (Required)
 
   </summary>
 
@@ -37,7 +38,7 @@
 <details>
   <summary>
 
-  ### 获得Cookie (Required)
+  #### 获得Cookie (Required)
 
   </summary>
 
@@ -68,8 +69,10 @@ docker build -t duan2001/bingchat .
 # 运行容器
 docker run -d --name=bingchat --restart=always -p <你想要开放的端口>:8007 duan2001/bingchat
 
-#在插件页面填入后端地址：http://127.0.0.1:<上面开放的端口>/chat
+#在插件页面填入后端地址：http://127.0.0.1:<上面开放的端口>/bing
+```
 
+```shell
 # 更新方法
 #进入下载项目源码的文件夹
 cd koishi-bingchat-server
