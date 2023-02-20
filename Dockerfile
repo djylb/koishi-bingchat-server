@@ -19,7 +19,9 @@ RUN apt-get update -qqy \
 	pkg-config \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY . /srv/openchat/
+COPY ./bing.py /srv/openchat/
+COPY ./requirements.txt /srv/openchat/
+
 RUN chown -R www-data:www-data /srv/openchat
 
 # Setup openchat
@@ -35,6 +37,7 @@ RUN python3 -m venv venv && \
 # Register services to runit
 RUN mkdir /etc/service/bing
 COPY conf/runit/bing.sh /etc/service/bing/run
+RUN chmod a+x /etc/service/bing/run
 
 # Define mountable directories.
 #VOLUME []
