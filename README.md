@@ -60,6 +60,18 @@ nano cookie.json
 
 # 运行容器
 docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
+# 示例
+docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p 8006:8007 duan2001/bingchat
+
+# 测试后端是否正常运行（可选，或者浏览器直接打开网址测试）
+wget -q -O - http://127.0.0.1:<上面开放的端口>/ping
+# 示例
+wget -q -O - http://127.0.0.1:8006/ping
+
+# 在koishi插件中填入后端地址
+http://<服务器地址>:<上面开放的端口>/bing
+# 示例
+http://127.0.0.1:8006/bing
 ```
 
 ```shell
