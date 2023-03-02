@@ -26,8 +26,8 @@
 
   </summary>
 
-- 安装最新版本的 Microsoft Edge
-- 打开 http://bing.com/chat
+- 安装最新版本的 Microsoft Edge (可选)
+- 打开 http://bing.com/chat （需要登录微软账号）
 - 如果看到聊天界面说明账户可用
 
 </details>
@@ -40,10 +40,10 @@
   </summary>
 
 - 安装浏览器插件 [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
-- 打开该网址 `bing.com`
+- 打开该网址 `bing.com` [Bing](https://bing.com)
 - 打开安装的浏览器扩展插件
 - 点击 "Export" 按钮导出Cookie信息 (This saves your cookies to clipboard)
-- 将剪贴板内容粘贴到 `cookies.json`
+- 将剪贴板内容粘贴到 `cookie.json`
 
 </details>
 
