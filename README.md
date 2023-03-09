@@ -26,8 +26,8 @@
 
   </summary>
 
-- 安装最新版本的 Microsoft Edge
-- 打开 http://bing.com/chat
+- 安装最新版本的 Microsoft Edge (可选)
+- 打开 http://bing.com/chat （需要登录微软账号）
 - 如果看到聊天界面说明账户可用
 
 </details>
@@ -40,10 +40,10 @@
   </summary>
 
 - 安装浏览器插件 [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
-- 打开该网址 `bing.com`
+- 打开该网址 `bing.com` [Bing](https://bing.com)
 - 打开安装的浏览器扩展插件
 - 点击 "Export" 按钮导出Cookie信息 (This saves your cookies to clipboard)
-- 将剪贴板内容粘贴到 `cookies.json`
+- 将剪贴板内容粘贴到 `cookie.json`
 
 </details>
 
@@ -60,6 +60,18 @@ nano cookie.json
 
 # 运行容器
 docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
+# 示例
+docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p 8006:8007 duan2001/bingchat
+
+# 测试后端是否正常运行（可选，或者浏览器直接打开网址测试）
+wget -q -O - http://127.0.0.1:<上面开放的端口>/ping
+# 示例
+wget -q -O - http://127.0.0.1:8006/ping
+
+# 在koishi插件中填入后端地址
+http://<服务器地址>:<上面开放的端口>/bing
+# 示例
+http://127.0.0.1:8006/bing
 ```
 
 ```shell
