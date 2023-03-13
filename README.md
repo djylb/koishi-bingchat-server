@@ -131,7 +131,7 @@ docker stop bingchat
 docker rm bingchat
 
 # 运行更新后的容器
-docker run -d --name=openchat --restart=always -p <你想要开放的端口>:8006 duan2001/bingchat
+docker run -d --name=openchat --restart=always -p <你想要开放的端口>:8007 duan2001/bingchat
 ```
 
 # 手动搭建
