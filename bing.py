@@ -1,3 +1,4 @@
+import traceback
 from EdgeGPT import Chatbot
 from fastapi import FastAPI, Body
 import uvicorn
@@ -37,6 +38,7 @@ async def chatGPT(body: dict = Body(...)):
         answer = (await chatbot.ask(prompt))["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"]
         print("Bingbot: " + answer)
     except:
+        traceback.print_exc()
         await chatbot.reset()
         answer = "ERROR"
         pass
