@@ -130,3 +130,6 @@ dmypy.json
 
 # Cookie File
 cookie.json
+
+# Log
+log/

@@ -10,6 +10,8 @@
 
 2023.3.9  更新 添加启动时自动更新上游包。
 
+2023.3.13 更新 修复权限问题。
+
 ## 前提准备
 
 - 搭建一个可以运行的koshi服务器
@@ -51,7 +53,7 @@
 
 # **docker 搭建 server （推荐）By D-Jy**
 
-[Docker](https://hub.docker.com/r/duan2001/bingchat) 更新时间：2023.3.9
+[Docker](https://hub.docker.com/r/duan2001/bingchat) 更新时间：2023.3.13
 
 ```shell
 # 新建一个目录

@@ -1,6 +1,3 @@
-import os
-os.system(f'pip install --upgrade  -r requirements.txt')
-
 from EdgeGPT import Chatbot
 from fastapi import FastAPI, Body
 import uvicorn
