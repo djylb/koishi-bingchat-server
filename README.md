@@ -135,6 +135,7 @@ docker run -d --name=openchat --restart=always -p <你想要开放的端口>:800
 ```
 
 # 手动搭建
+手动搭建步骤仅供参考
 ### 1. 下载[bing.py](https://github.com/D-Jy-lab/koishi-bingchat-server/raw/main/bing.py)
 ### 2. 安装依赖包
 ```shell
