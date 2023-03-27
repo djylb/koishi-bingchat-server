@@ -137,7 +137,21 @@ docker run -d --name=openchat --restart=always -p <你想要开放的端口>:800
 # 手动搭建
 ## 待续
 参考Dockerfile文件，并按需要修改bing.py文件。
+### 1. 下载[bing.py](https://github.com/D-Jy-lab/koishi-bingchat-server/raw/main/bing.py)
+### 2. 安装依赖包
+'''shell
+# 创建并激活虚拟环境（可选）
+python -m venv venv
+. venv/bin/activate
 
+# 安装依赖
+pip3 install --upgrade EdgeGPT fastapi uvicorn
+'''
+### 3. 按照上述说明获取cookie，并按自己需求编辑bing.py文件。
+### 4. 运行后端。
+'''shell
+python bing.py
+'''
 
 ## Links
 
