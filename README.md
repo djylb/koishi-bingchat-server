@@ -17,9 +17,15 @@
 2023.3.13 更新 修复权限问题。
 
 2023.3.28 更新 完善教程。
+
+2023.4.2  更新 添加代理支持。
 </details>
 
 近期可能会添加bing的绘图功能。（如果太忙没时间的话可能会鸽掉）
+
+## 注意事项
+
+近期bing对部分国内IP段进行限制，可能需要使用代理才能正常使用。
 
 ## 前提准备
 
@@ -78,6 +84,13 @@ nano cookie.json
 docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p <你想要开放的端口>:8007 duan2001/bingchat
 # 示例
 docker run -d --name=bingchat --restart=always -v ${PWD}/cookie.json:/srv/openchat/cookie.json -p 8006:8007 duan2001/bingchat
+
+# 代理示例（按需要修改）
+docker run -d --name=bingchat --restart=always \
+-v ${PWD}/cookie.json:/srv/openchat/cookie.json \
+--env HTTP_PROXY="http://172.17.0.1:8080" \
+--env HTTP_PROXY="http://172.17.0.1:8080" \
+-p 8006:8007 duan2001/bingchat
 
 # 测试后端是否正常运行（可选，或者浏览器直接打开网址测试）
 wget -q -O - http://127.0.0.1:<上面开放的端口>/ping
