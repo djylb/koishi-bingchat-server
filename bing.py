@@ -1,3 +1,8 @@
+# 如需使用代理功能请取消注释并按需要修改
+#import os
+#os.environ["http_proxy"] = "http://127.0.0.1:8080"
+#os.environ["https_proxy"] = "http://127.0.0.1:8080"
+
 import traceback
 from EdgeGPT import Chatbot
 from fastapi import FastAPI, Body
