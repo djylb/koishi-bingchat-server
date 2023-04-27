@@ -45,6 +45,24 @@ async def chatGPT(body: dict = Body(...)):
             print("OK")
             flag = False
             return {"message": "OK"}
+        if prompt == "!creative":
+            conversation_style = ConversationStyle.creative
+            await chatbot.reset()
+            print("Creative")
+            flag = False
+            return {"message": "Creative"}
+        if prompt == "!balanced":
+            conversation_style = ConversationStyle.balanced
+            await chatbot.reset()
+            print("Balanced")
+            flag = False
+            return {"message": "Balanced"}
+        if prompt == "!precise":
+            conversation_style = ConversationStyle.precise
+            await chatbot.reset()
+            print("Precise")
+            flag = False
+            return {"message": "Precise"}
         answer = (await chatbot.ask(prompt, conversation_style, wss_link))["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"]
         print("Bingbot: " + answer)
     except:
