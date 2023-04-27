@@ -1,14 +1,19 @@
 # 如需使用代理功能请取消注释并按需要修改
-#import os
-#os.environ["http_proxy"] = "http://127.0.0.1:8080"
-#os.environ["https_proxy"] = "http://127.0.0.1:8080"
+# import os
+# os.environ["http_proxy"] = "http://127.0.0.1:8080"
+# os.environ["https_proxy"] = "http://127.0.0.1:8080"
 
 import traceback
-from EdgeGPT import Chatbot
+import asyncio
+from EdgeGPT import Chatbot, ConversationStyle
 from fastapi import FastAPI, Body
 import uvicorn
 
 app = FastAPI()
+
+# 参数设置
+conversation_style = ConversationStyle.balanced  # 可选择creative,balanced,precise
+wss_link = "wss://sydney.bing.com/sydney/ChatHub"
 
 # 手动配置时按需要修改监听地址和端口
 HOST = "0.0.0.0"
@@ -26,7 +31,7 @@ def ping():
 
 @app.post("/bing")
 async def chatGPT(body: dict = Body(...)):
-    global flag
+    global flag, conversation_style, wss_link
     prompt = body["prompt"]
     print("User: " + prompt)
 
@@ -40,7 +45,7 @@ async def chatGPT(body: dict = Body(...)):
             print("OK")
             flag = False
             return {"message": "OK"}
-        answer = (await chatbot.ask(prompt))["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"]
+        answer = (await chatbot.ask(prompt, conversation_style, wss_link))["item"]["messages"][1]["adaptiveCards"][0]["body"][0]["text"]
         print("Bingbot: " + answer)
     except:
         traceback.print_exc()
