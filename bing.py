@@ -1,7 +1,7 @@
 # 如需使用代理功能请取消注释并按需要修改
-# import os
-# os.environ["http_proxy"] = "http://127.0.0.1:8080"
-# os.environ["https_proxy"] = "http://127.0.0.1:8080"
+#import os
+#os.environ["http_proxy"] = "http://127.0.0.1:8080"
+#os.environ["https_proxy"] = "http://127.0.0.1:8080"
 
 import traceback
 import asyncio
@@ -21,6 +21,13 @@ PORT = 8007
 
 # 手动配置时按需要修改cookie文件路径，将./cookie.json修改为你自己的文件位置（一般不用修改）
 chatbot = Chatbot(cookie_path='./cookie.json')
+# 直接传参 (Pass in the cookies directly)
+#import json
+#with open('cookie.json', 'r') as cookie_file:
+#    cookie_data = json.load(cookie_file)
+#    print(cookie_data)
+#chatbot = Chatbot(cookies=cookie_data)
+
 flag = False
 
 
