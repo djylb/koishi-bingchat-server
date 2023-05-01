@@ -68,7 +68,7 @@
 
 # **docker 搭建 server （推荐）By D-Jy**
 
-[Docker](https://hub.docker.com/r/duan2001/bingchat) 更新时间：2023.3.13
+[Docker](https://hub.docker.com/r/duan2001/bingchat) 更新时间：2023.4.27
 
 ```shell
 # 新建一个目录
