@@ -1,5 +1,7 @@
 # koishi-bingchat-server
 
+项目寄了
+
 ### 更新日志
 <details>
 <summary>点击此处展开</summary>
